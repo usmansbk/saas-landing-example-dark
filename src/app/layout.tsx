@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${dm.className} antialiased bg-black`}>{children}</body>
+      <body className={`${dm.className} antialiased`}>{children}</body>
     </html>
   );
 }
