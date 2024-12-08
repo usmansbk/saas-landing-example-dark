@@ -10,7 +10,7 @@
 
 ## Live Link
 
-- [Vercel](https://saas-landing-example-light-v92l.vercel.app/)
+- [Vercel](https://saas-landing-example-dark-qcu5.vercel.app/)
 
 ## Design
 
