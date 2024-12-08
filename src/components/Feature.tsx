@@ -12,8 +12,8 @@ export default function Feature({
   description: string;
 }) {
   const borderRef = useRef<HTMLDivElement>(null);
-  const offsetX = useMotionValue(0);
-  const offsetY = useMotionValue(0);
+  const offsetX = useMotionValue(-100);
+  const offsetY = useMotionValue(-100);
 
   useEffect(() => {
     const listener = (e: MouseEvent) => {
