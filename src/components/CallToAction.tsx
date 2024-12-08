@@ -1,24 +1,43 @@
+"use client";
 import helixImage from "@/assets/images/helix.png";
 import graphImage from "@/assets/images/graph.png";
-import Image from "next/image";
+import { motion, useScroll, useTransform } from "motion/react";
+import { useRef } from "react";
 
 export default function CallToAction() {
+  const scrollTargetRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: scrollTargetRef,
+    offset: ["start end", "end end"],
+  });
+
+  const translateY = useTransform(scrollYProgress, [0, 1], [40, -40]);
+
   return (
-    <div className="bg-black text-white  py-[72px] sm:py-24 overflow-x-clip">
+    <div
+      ref={scrollTargetRef}
+      className="bg-black text-white  py-[72px] sm:py-24 overflow-x-clip"
+    >
       <div className="container max-w-xl relative">
-        <Image
-          src={helixImage}
+        <motion.img
+          src={helixImage.src}
           alt=""
           width={225}
           height={225}
           className="absolute top-6 left-[calc(100%+36px)]"
+          style={{
+            translateY,
+          }}
         />
-        <Image
-          src={graphImage}
+        <motion.img
+          src={graphImage.src}
           alt=""
           width={234}
           height={234}
           className="absolute -top-[120px] right-[calc(100%+24px)]"
+          style={{
+            translateY,
+          }}
         />
         <h2 className="text-center font-bold text-5xl sm:text-6xl tracking-tighter">
           Get instant access
