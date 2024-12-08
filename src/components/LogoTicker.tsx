@@ -1,3 +1,4 @@
+"use client";
 import acmeLogo from "@/assets/images/acme.png";
 import apexLogo from "@/assets/images/apex.png";
 import celestiaLogo from "@/assets/images/celestia.png";
@@ -5,6 +6,7 @@ import echoLogo from "@/assets/images/echo.png";
 import pulseLogo from "@/assets/images/pulse.png";
 import quantumLogo from "@/assets/images/quantum.png";
 import Image from "next/image";
+import { motion } from "motion/react";
 
 const images = [
   {
@@ -41,7 +43,19 @@ export default function LogoTicker() {
           Trusted by the world’s most innovative teams
         </h2>
         <div className="overflow-hidden mt-9 before:content-[''] after:content-[''] before:absolute after:absolute before:h-full after:h-full before:w-5 after:w-5 relative after:right-0 before:left-0 before:top-0 after:top-0 before:bg-[linear-gradient(to_right,#000,rgb(0,0,0,0))] after:bg-[linear-gradient(to_left,#000,rgb(0,0,0,0))]">
-          <div className="flex gap-16">
+          <motion.div
+            initial={{ translateX: 0 }}
+            animate={{
+              translateX: "-50%",
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              repeatType: "loop",
+              ease: "linear",
+            }}
+            className="flex gap-16 flex-none pr-16"
+          >
             {images.map((logo) => (
               <Image
                 src={logo.src}
@@ -50,7 +64,15 @@ export default function LogoTicker() {
                 className="w-auto h-8 flex-none"
               />
             ))}
-          </div>
+            {images.map((logo) => (
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                key={logo.alt}
+                className="w-auto h-8 flex-none"
+              />
+            ))}
+          </motion.div>
         </div>
       </div>
     </div>
