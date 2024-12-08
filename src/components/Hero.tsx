@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <div className="text-white bg-[linear-gradient(to_bottom,#000000,#200D42_34%,#4F21A1_65%,#A46EDB_82%)] py-[72px] sm:py-24 relative overflow-clip">
-      <div className="absolute h-[375px] w-[750px] sm:w-[1536px] sm:h-[768px] lg:w-[2400px] lg:h-[1200px] rounded-[100%] left-1/2 -translate-x-1/2 border border-[#b48cde]  bg-[radial-gradient(closest-side_at_50%_50%,#000000_69%,#9C67F4)] top-[calc(100%-96px)] sm:top-[calc(100%-120px)]" />
+      <div className="absolute h-[375px] w-[750px] sm:w-[1536px] sm:h-[768px] lg:w-[2400px] lg:h-[1200px] rounded-[100%] left-1/2 -translate-x-1/2 border border-[#b48cde]  bg-[radial-gradient(closest-side,#000000_82%,#9560EB)] top-[calc(100%-96px)] sm:top-[calc(100%-120px)]" />
       <div className="container relative">
         <div className="flex items-center justify-center">
           <Link
