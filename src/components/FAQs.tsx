@@ -2,7 +2,7 @@
 import PlusIcon from "@/assets/icons/plus.svg";
 import MinusIcon from "@/assets/icons/minus.svg";
 import { useState } from "react";
-import clsx from "clsx";
+import { AnimatePresence, motion } from "motion/react";
 
 const faqs = [
   {
@@ -53,13 +53,29 @@ const AccordionItem = ({
           <PlusIcon className="w-5 h-5" />
         )}
       </div>
-      <div
-        className={clsx("mt-4", {
-          hidden: !isOpen,
-        })}
-      >
-        {answer}
-      </div>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{
+              opacity: 0,
+              height: 0,
+              marginTop: 0,
+            }}
+            animate={{
+              opacity: 1,
+              height: "auto",
+              marginTop: 16,
+            }}
+            exit={{
+              opacity: 0,
+              height: 0,
+              marginTop: 0,
+            }}
+          >
+            {answer}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
