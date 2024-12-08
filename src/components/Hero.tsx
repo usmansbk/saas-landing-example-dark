@@ -1,8 +1,10 @@
+"use client";
 import Link from "next/link";
 import ArrowRight from "@/assets/icons/arrow-right.svg";
 import cursorImage from "@/assets/images/cursor.png";
 import messageImage from "@/assets/images/message.png";
 import Image from "next/image";
+import { motion } from "motion/react";
 
 export default function Hero() {
   return (
@@ -29,20 +31,34 @@ export default function Hero() {
               One Task <br />
               at a Time
             </h1>
-            <Image
-              src={cursorImage}
-              alt=""
-              width={200}
-              height={200}
+            <motion.div
+              drag
+              dragSnapToOrigin
               className="absolute right-[476px] top-[108px] hidden sm:inline"
-            />
-            <Image
-              src={messageImage}
-              alt=""
-              width={200}
-              height={200}
+            >
+              <Image
+                draggable={false}
+                src={cursorImage}
+                alt=""
+                width={200}
+                height={200}
+                className="max-w-none"
+              />
+            </motion.div>
+            <motion.div
+              drag
+              dragSnapToOrigin
               className="absolute top-[56px] left-[498px] hidden sm:inline"
-            />
+            >
+              <Image
+                draggable={false}
+                src={messageImage}
+                alt=""
+                width={200}
+                height={200}
+                className="max-w-none"
+              />
+            </motion.div>
           </div>
         </div>
         <div className="flex justify-center">
