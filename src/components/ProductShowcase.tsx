@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function ProductShowcase() {
   return (
-    <div className="bg-black text-white bg-gradient-to-b from-black to-[#5d2ca8] py-[72px] sm:py-24">
+    <div className="text-white bg-gradient-to-b from-black to-[#5d2ca8] py-[72px] sm:py-24">
       <div className="container">
         <h2 className="text-center font-bold text-5xl sm:text-6xl tracking-tighter">
           Intuitive interface
